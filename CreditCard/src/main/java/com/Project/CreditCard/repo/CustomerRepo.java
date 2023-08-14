@@ -11,12 +11,10 @@ import java.util.List;
 
 public interface CustomerRepo  extends MongoRepository<Customer, String> {
 
-    public Customer findByCustomerId(String id);
+    List<Customer> findByGender(String Gender);
+    List<Customer> findByProfession(String profession);
 
-    @Query("{'name':'?0'}")
-    List<Customer> findByName(String name);
-    @Query("{'country':'?0'}")
-    List<Customer> findByCountry(String country);
+
 
     //Page<Customer> findByGreaterThan(double salary, Pageable pageable);
     //Page<Customer> findAll(Pageable pageable);
